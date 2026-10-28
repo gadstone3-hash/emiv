@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>EMIV Perfect Design – Garnissage et réparation auto à Lubumbashi</title>
+<style>
+:root{
+  --bg:#f4f2ef;--surface:#ffffff;--text:#1a1816;--muted:#645d56;
+  --accent:#d9520e;--accent-text:#ffffff;--line:#ddd7cf;--dark:#181513;
+  box-sizing:border-box;color-scheme:light;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#141210;--surface:#1f1c19;--text:#f3efe9;--muted:#b4aba1;
+    --accent:#ff7a2e;--accent-text:#141210;--line:#322d28;--dark:#0e0c0b;color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#141210;--surface:#1f1c19;--text:#f3efe9;--muted:#b4aba1;
+  --accent:#ff7a2e;--accent-text:#141210;--line:#322d28;--dark:#0e0c0b;color-scheme:dark;
+}
+html{scroll-padding-top:calc(60px + env(safe-area-inset-top,0px));scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;line-height:1.55}
+h1,h2,h3{margin:0;line-height:1.15;font-family:"Arial Narrow","Helvetica Neue",Arial,sans-serif;font-weight:800;letter-spacing:-.01em}
+a{color:inherit}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px}
+header{position:sticky;top:env(safe-area-inset-top,0px);background:var(--dark);z-index:5}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:56px}
+.logo{font-weight:800;font-size:1.15rem;text-decoration:none;color:#fff;font-family:"Arial Narrow",Arial,sans-serif;letter-spacing:.02em}
+.logo span{color:var(--accent)}
+nav{display:flex;gap:18px;font-size:.92rem}
+nav a{text-decoration:none;color:#cfc7bd}
+.hero{position:relative;color:#fff;background:#181513 url(images/siege-noir-orange.jpg) center/cover;padding:72px 0 56px}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(14,12,11,.92),rgba(14,12,11,.55))}
+.hero .wrap{position:relative}
+.hero h1{font-size:2.5rem;max-width:520px;margin-bottom:12px}
+.hero p{color:#e2dbd2;max-width:460px;margin:0 0 24px}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-text);padding:13px 22px;border-radius:6px;font-weight:700;text-decoration:none;border:0;font-size:1rem;cursor:pointer}
+.btn.ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.5);margin-left:6px}
+.contact .btn.ghost{color:var(--text);border-color:var(--line)}
+section{padding:46px 0}
+section h2{font-size:1.7rem;margin-bottom:6px}
+.sub{color:var(--muted);margin:0 0 20px}
+.services{display:grid;gap:10px}
+.svc{background:var(--surface);border:1.5px solid var(--line);border-radius:8px;padding:14px 16px;display:flex;gap:14px;align-items:center;cursor:pointer}
+.svc.on{border-color:var(--accent)}
+.svc input{width:22px;height:22px;accent-color:var(--accent);flex:none}
+.svc .info{flex:1;min-width:0}
+.svc h3{font-size:1.02rem;font-family:system-ui,sans-serif;font-weight:700}
+.svc p{margin:2px 0 0;font-size:.85rem;color:var(--muted)}
+.svc .price{font-weight:800;color:var(--accent);white-space:nowrap;font-size:1.1rem}
+.total{margin-top:16px;background:var(--dark);color:#fff;border-radius:8px;padding:16px 18px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.total small{display:block;color:#b4aba1}
+.total b{font-size:1.6rem;color:var(--accent)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:18px}
+.chip{background:var(--surface);color:var(--text);border:1px solid var(--line);padding:8px 16px;border-radius:999px;font-size:.9rem;cursor:pointer}
+.chip.on{background:var(--accent);color:var(--accent-text);border-color:var(--accent)}
+.gal{columns:2;column-gap:10px}
+.gal button{display:block;width:100%;margin:0 0 10px;padding:0;border:0;border-radius:8px;overflow:hidden;cursor:zoom-in;background:var(--surface);break-inside:avoid;position:relative}
+.gal img{display:block;width:100%;height:auto}
+.gal span{position:absolute;left:0;right:0;bottom:0;padding:18px 10px 8px;color:#fff;font-size:.8rem;text-align:left;background:linear-gradient(transparent,rgba(0,0,0,.7))}
+@media (min-width:700px){.gal{columns:3}}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.duo img{width:100%;border-radius:8px;display:block}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px;counter-reset:s}
+.steps div{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:16px;counter-increment:s}
+.steps div::before{content:counter(s);display:inline-flex;width:28px;height:28px;border-radius:50%;background:var(--accent);color:var(--accent-text);align-items:center;justify-content:center;font-weight:700;margin-bottom:6px}
+.steps b{display:block}
+.steps span{color:var(--muted);font-size:.9rem}
+.contact{text-align:center;background:var(--surface)}
+.contact p{margin:6px 0}
+footer{text-align:center;color:var(--muted);font-size:.82rem;padding:22px 20px 96px}
+.fab{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));background:#25a244;color:#fff;border-radius:999px;padding:13px 20px;font-weight:600;text-decoration:none;box-shadow:0 4px 14px rgba(0,0,0,.3);z-index:6}
+#lb{position:fixed;inset:0;background:rgba(0,0,0,.92);display:none;align-items:center;justify-content:center;z-index:10;padding:16px}
+#lb.open{display:flex}
+#lb img{max-width:100%;max-height:100%;border-radius:6px}
+#lb button{position:absolute;top:calc(12px + env(safe-area-inset-top,0px));right:14px;background:#fff;color:#000;border:0;border-radius:999px;width:40px;height:40px;font-size:1.3rem;cursor:pointer}
+@media (max-width:520px){nav{display:none}.hero h1{font-size:2rem}.hero{padding:56px 0 44px}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+  <a class="logo" href="#top">EMIV <span>PERFECT DESIGN</span></a>
+  <nav><a href="#services">Prix</a><a href="#realisations">Réalisations</a><a href="#contact">Contact</a></nav>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+  <h1>Votre intérieur auto, refait sur mesure</h1>
+  <p>Sièges, tableau de bord, tapis, plafond, portières : nous garnissons tous les véhicules, même très abîmés. Lubumbashi.</p>
+  <a class="btn" href="#services">Voir les prix</a>
+  <a class="btn ghost" data-wa="Bonjour, je voudrais un devis pour le garnissage de mon véhicule.">Demander un devis</a>
+</div></div>
+
+<section id="services"><div class="wrap">
+  <h2>Nos services et nos prix</h2>
+  <p class="sub">Cochez ce qui vous intéresse : le total se calcule tout seul.</p>
+  <div class="services" id="list">
+    <label class="svc"><input type="checkbox" data-p="80" data-n="Garnissage accessoires complets"><div class="info"><h3>Accessoires complets</h3><p>Volant, boîte de vitesse, poste radio, boutons et autres accessoires</p></div><div class="price">80 $</div></label>
+    <label class="svc"><input type="checkbox" data-p="130" data-n="Sièges (housses)"><div class="info"><h3>Sièges (housses)</h3><p>Garnissage et confort des sièges</p></div><div class="price">130 $</div></label>
+    <label class="svc"><input type="checkbox" data-p="120" data-n="Tableau de bord"><div class="info"><h3>Tableau de bord</h3><p>Habillage neuf, fini propre et durable</p></div><div class="price">120 $</div></label>
+    <label class="svc"><input type="checkbox" data-p="250" data-n="Tapis de sol complet"><div class="info"><h3>Tapis de sol complet</h3><p>Tapis sur mesure pour tout l’intérieur</p></div><div class="price">250 $</div></label>
+    <label class="svc"><input type="checkbox" data-p="100" data-n="Toiture / Plafond"><div class="info"><h3>Toiture / Plafond</h3><p>Plafond refait comme neuf</p></div><div class="price">100 $</div></label>
+    <label class="svc"><input type="checkbox" data-p="140" data-n="Portières / Panneaux de porte"><div class="info"><h3>Portières / Panneaux de porte</h3><p>Habillage des panneaux et finitions</p></div><div class="price">140 $</div></label>
+  </div>
+  <div class="total">
+    <div><small>Total estimé</small><b id="sum">0 $</b></div>
+    <a class="btn" id="quote">Demander ce devis</a>
+  </div>
+</div></section>
+
+<section id="realisations" style="padding-top:0"><div class="wrap">
+  <h2>Nos réalisations</h2>
+  <p class="sub">Touchez une photo pour l’agrandir.</p>
+  <div class="filters" id="filters"></div>
+  <div class="gal" id="gal"></div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <h2>À l’atelier</h2>
+  <p class="sub">Du travail fait à la main, avec soin.</p>
+  <div class="duo">
+    <img src="images/atelier-1.jpg" alt="Garnissage d’un plafond de véhicule à l’atelier" loading="lazy">
+    <img src="images/atelier-2.jpg" alt="Rénovation complète de l’habitacle" loading="lazy">
+  </div>
+</div></section>
+
+<section style="padding-top:0"><div class="wrap">
+  <h2>Comment ça marche</h2>
+  <p class="sub">Simple et sans surprise.</p>
+  <div class="steps">
+    <div><b>Vous nous écrivez</b><span>Envoyez des photos de votre véhicule sur WhatsApp.</span></div>
+    <div><b>Devis clair</b><span>Vous recevez le prix et le délai avant de commencer.</span></div>
+    <div><b>Nous garnissons</b><span>Travail soigné, matières de qualité.</span></div>
+    <div><b>Vous récupérez</b><span>Un intérieur neuf, prêt à rouler.</span></div>
+  </div>
+</div></section>
+
+<section id="contact" class="contact"><div class="wrap">
+  <h2>Prêt à refaire votre intérieur ?</h2>
+  <p>Envoyez-nous une photo, nous vous répondons avec un prix.</p>
+  <p style="margin-top:16px">
+    <a class="btn" data-wa="Bonjour, voici mon véhicule. Je voudrais un devis.">Écrire sur WhatsApp</a>
+    <a class="btn ghost" href="tel:+243996591942">Appeler</a>
+  </p>
+  <p style="color:var(--muted);font-size:.9rem;margin-top:12px">WhatsApp : 0904 450 151 · Appel : +243 996 591 942</p>
+  <p><a href="https://www.google.com/maps/search/?api=1&query=garnissage+auto+Lubumbashi" target="_blank" rel="noopener">Voir sur Google Maps</a></p>
+</div></section>
+</main>
+
+<footer>© 2026 EMIV Perfect Design · Garnissage et réparation auto</footer>
+<a class="fab" data-wa="Bonjour, j’ai une question sur le garnissage.">💬 WhatsApp</a>
+
+<div id="lb" role="dialog" aria-label="Photo agrandie"><button aria-label="Fermer">×</button><img alt=""></div>
+
+<script>
+var NUM="243904450151"; // numéro WhatsApp du client
+function link(el,msg){el.href="https://wa.me/"+NUM+"?text="+encodeURIComponent(msg);el.target="_blank";el.rel="noopener"}
+document.querySelectorAll("[data-wa]").forEach(function(el){link(el,el.getAttribute("data-wa"))});
+
+// Devis
+var boxes=document.querySelectorAll("#list input"),sum=document.getElementById("sum"),quote=document.getElementById("quote");
+function update(){
+  var total=0,names=[];
+  boxes.forEach(function(b){
+    b.parentElement.classList.toggle("on",b.checked);
+    if(b.checked){total+=Number(b.dataset.p);names.push("- "+b.dataset.n+" ("+b.dataset.p+" $)")}
+  });
+  sum.textContent=total+" $";
+  link(quote,names.length?"Bonjour, je voudrais un devis pour :\n"+names.join("\n")+"\nTotal estimé : "+total+" $.\nVoici mon véhicule : (envoyez une photo)":"Bonjour, je voudrais un devis pour le garnissage de mon véhicule.");
+}
+boxes.forEach(function(b){b.addEventListener("change",update)});update();
+
+// Galerie : pour ajouter une photo, copiez une ligne et changez f (fichier), t (titre), c (catégorie)
+var PHOTOS=[
+  {f:"siege-noir-orange",t:"Siège noir et orange",c:"Sièges"},
+  {f:"sieges-minibus-bleu",t:"Sièges de minibus",c:"Sièges"},
+  {f:"sieges-coccinelle-rouge",t:"Sièges en cuir rouge",c:"Sièges"},
+  {f:"sieges-vert-marron",t:"Sièges vert et marron",c:"Sièges"},
+  {f:"siege-cuir-cognac",t:"Siège cuir matelassé",c:"Sièges"},
+  {f:"sieges-bus-tissu",t:"Sièges de bus",c:"Sièges"},
+  {f:"tableau-coccinelle",t:"Tableau de bord et portière",c:"Tableau de bord"},
+  {f:"porte-velours-rouge",t:"Portière en velours rouge",c:"Portières"},
+  {f:"sol-bordeaux",t:"Tapis de sol bordeaux",c:"Sols"},
+  {f:"sol-aluminium",t:"Sol en aluminium",c:"Sols"}
+];
+var cats=["Tous"],filters=document.getElementById("filters"),gal=document.getElementById("gal");
+PHOTOS.forEach(function(p){if(cats.indexOf(p.c)<0)cats.push(p.c)});
+cats.forEach(function(c,i){
+  var b=document.createElement("button");b.className="chip"+(i?"":" on");b.textContent=c;
+  b.onclick=function(){filters.querySelectorAll(".chip").forEach(function(x){x.classList.remove("on")});b.classList.add("on");draw(c)};
+  filters.appendChild(b);
+});
+function draw(c){
+  gal.innerHTML="";
+  PHOTOS.filter(function(p){return c==="Tous"||p.c===c}).forEach(function(p){
+    var b=document.createElement("button"),i=document.createElement("img");
+    i.src="images/"+p.f+".jpg";i.alt=p.t;i.loading="lazy";
+    var s=document.createElement("span");s.textContent=p.t;
+    b.appendChild(i);b.appendChild(s);b.onclick=function(){open(i.src,p.t)};
+    gal.appendChild(b);
+  });
+}
+draw("Tous");
+var lb=document.getElementById("lb"),lbi=lb.querySelector("img");
+function open(src,alt){lbi.src=src;lbi.alt=alt;lb.classList.add("open")}
+lb.onclick=function(){lb.classList.remove("open")};
+document.addEventListener("keydown",function(e){if(e.key==="Escape")lb.classList.remove("open")});
+</script>
+</body>
+</html>
